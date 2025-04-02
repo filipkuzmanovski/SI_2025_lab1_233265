@@ -49,7 +49,9 @@ class TaskManager {
     public TaskManager() {
         this.tasks = new ArrayList<>();
     }
-
+    public List<Task> getTasks() {
+        return tasks;
+    }
     public void addTask(String name, Priority priority, String category) {
         tasks.add(new Task(name, priority, category));
     }
@@ -109,6 +111,11 @@ class TaskManager {
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
         // TODO: Implement bulk completion logic
+        for (Task task : tasks){
+            if(task.getCategory().equals(category)){
+                task.complete();
+            }
+        }
     }
 }
 
@@ -117,10 +124,20 @@ public class SI2025Lab1Main {
         TaskManager manager = new TaskManager();
         manager.addTask("Write report", Priority.HIGH, "Work");
         manager.addTask("Submit assignment", Priority.MEDIUM, "School");
+        //Few more tasks for testing purposes
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
+        manager.addTask("Buy Laptop", Priority.HIGH, "Personal");
+        manager.addTask("Buy Gift", Priority.MEDIUM, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
 
         manager.printTasks();
+        //Testing markCategoryCompleted method
+        manager.markCategoryCompleted("Personal");
+        for (Task task : manager.getTasks()){
+            if(task.isCompleted()){
+                System.out.println(task);
+            }
+        }
     }
 }
