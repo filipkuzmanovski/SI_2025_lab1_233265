@@ -1,0 +1,15 @@
+13.git fetch origin
+
+14.$ git checkout 2-find-all-completed-tasks
+
+16.git add SI2025Lab1Main.java
+git commit -m "Added find all completed tasks method"
+
+17.git push -u origin master
+git branch -d 2-find-all-completed-tasks
+$ git commit -m "Resolved merge conflict with 8-mark-a-task-as-completed-by-name manually by modifying the code"
+18. Go zaboraviv ovoj del i prasanjata od 20 do 24 za zhal ne mi se ispolneti ja voociv greskata koga veke gi mergnav site granki so mainot i gi srediv site konflikti
+
+25.git add 233265.txt
+git add logs.txt
+git commit -m "Final commit"
