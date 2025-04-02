@@ -139,11 +139,14 @@ public class SI2025Lab1Main {
         manager.printTasks();
 
         List<Task> completed=manager.getCompletedTasks();
+        //COMPLETED TASKS LIST METHOD
         System.out.println("Completed tasks with getCompletedTasks method:");
         for (Task task : completed) {
             System.out.println(task);
         }
 
+        manager.markTaskCompleted("Submit assignment");
+        //MARK TASK AS COMPLETED METHOD
         System.out.println("Completed tasks with getTasks*( method:");
         for (Task task : manager.getTasks()){
             if(task.isCompleted()){
@@ -151,4 +154,6 @@ public class SI2025Lab1Main {
             }
 
         }
+
+        System.out.println();
 }
