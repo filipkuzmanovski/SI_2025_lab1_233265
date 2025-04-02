@@ -1,0 +1,17 @@
+$ git log --oneline --graph --all
+* 80562f6 (HEAD -> master) Final commit
+* 5021ef1 Final comit
+*   24760e7 (origin/master, origin/HEAD) Final commit
+|\
+| * 2de775f (origin/9-mark-all-tasks-in-a-category-as-completed) Initial commit for the mark all tasks method
+* | cfb6a0e Adding comments for further readability of code
+* |   2cea4b6 Resolved merge conflict with 8-mark-a-task-as-completed-by-name manually by modifying the code
+|\ \
+| * | f454025 (origin/8-mark-a-task-as-completed-by-name) Implemented mark a task as completed by name method and also added
+ getTasks() method for testing purposes
+| |/
+* / fae5dc4 (origin/2-find-all-completed-tasks) Added find all completed tasks method
+|/
+* 92b0631 (origin/1-remove-a-task-by-name) Add starter code.
+* 0c3dfb5 Initial commit
+* 5ba17e3 Commit README.md to the remote repo
