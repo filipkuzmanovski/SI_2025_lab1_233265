@@ -45,7 +45,9 @@ class Task {
 
 class TaskManager {
     private List<Task> tasks;
-
+    public List<Task> getTasks() {
+        return tasks;
+    }
     public TaskManager() {
         this.tasks = new ArrayList<>();
     }
@@ -56,7 +58,7 @@ class TaskManager {
 
     public void printTasks() {
         for (Task task : tasks) {
-            System.out.println(task);
+            System.out.println(task.isCompleted());
         }
     }
 
@@ -104,6 +106,12 @@ class TaskManager {
     // 8. Mark a task as completed by name
     public void markTaskCompleted(String name) {
         // TODO: Implement completion logic
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                task.complete();
+                return;
+            }
+        }
     }
 
     // 9. Mark all tasks in a category as completed
@@ -119,8 +127,14 @@ public class SI2025Lab1Main {
         manager.addTask("Submit assignment", Priority.MEDIUM, "School");
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
-        // MISSING: Calls to the new methods that will be implemented
+        manager.markTaskCompleted("Write report");
 
+        // MISSING: Calls to the new methods that will be implemented
         manager.printTasks();
+        for (Task task : manager.getTasks()){
+            if(task.isCompleted()){
+                System.out.println(task);
+            }
+        }
     }
 }
